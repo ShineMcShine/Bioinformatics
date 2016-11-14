@@ -8,7 +8,9 @@
 *pass*
 
 poretools stats pass/ > stats.pass.txt 
+
 less stats.pass.txt
+
 
         total reads     33234
         total base pairs        129585047
@@ -19,3 +21,20 @@ less stats.pass.txt
         N25     9421
         N50     6282
         N75     3479
+
+*fail*
+
+poretools stats fail/ > stats.fail.txt
+
+less stats.fail.txt
+
+        
+        total reads     566
+        total base pairs        1629774
+        mean    2879.46
+        median  1982
+        min     352
+        max     129997
+        N25     11322
+        N50     3322
+        N75     2295
