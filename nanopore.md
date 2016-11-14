@@ -5,7 +5,7 @@
 
 ###Stats
 
-*pass
+*pass*
      
         total reads     33234
         total base pairs        129585047
