@@ -38,3 +38,5 @@ less stats.fail.txt
         N25     11322
         N50     3322
         N75     2295
+
+        *Ok this is weird. A quick ls -l | wc - l throws a total of 29234 reads in the fail/ folder, however only 566 of these          have been processed so far. My wild guess, only those that are 2D are taken into account when calculating the stats.*
