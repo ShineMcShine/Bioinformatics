@@ -61,6 +61,7 @@ grep -i 2d_2d pass.pass.fasta | wc -l
 *pass.fail*
 
 poretools fasta fail/ > pass.fail.fasta
+
 grep -i 2d_2d pass.fail.fasta | wc -l
         
         4642
