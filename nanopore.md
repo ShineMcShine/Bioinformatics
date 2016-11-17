@@ -55,13 +55,14 @@ poretools fasta pass/ > pass.pass.fasta
 *let's see how many 2D reads are there:*
 
 grep -i 2d_2d pass.pass.fasta | wc -l
+        
         3796
 
 *pass.fail*
 
 poretools fasta fail/ > pass.fail.fasta
-
 grep -i 2d_2d pass.fail.fasta | wc -l
+        
         4642
 
 
