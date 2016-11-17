@@ -1,11 +1,14 @@
 #First nanopore run
 
         1. Download all files from both pass and fail.
-        2. Use poretools to process files.
+        2. Both pass and fail have a pass and a fail folder, so we'll call "pass.pass", "pass.fail" and so on.
+        3. Use poretools to process files.
 
 ###Stats
 
-*pass*
+####*pass*
+
+*pass.pass*
 
 poretools stats pass/ > stats.pass.txt 
 
