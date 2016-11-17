@@ -8,7 +8,7 @@
 
 ####*pass*
 
-#####WD: /TR9/Run1/pass
+**WD: /TR9/Run1/pass**
 
 *pass.pass*
 
@@ -43,5 +43,26 @@ less stats.pass.fail.txt
         N50     5335
         N75     3417
         
+##Converting files from Fast5 to fasta
+
+####*pass*
+**WD: /TR9/Run1/pass**
+
+*pass.pass*
+
+poretools fasta pass/ > pass.pass.fasta
+
+*let's see how many 2D reads are there:*
+
+grep -i 2d_2d pass.pass.fasta | wc -l
+        3796
+
+*pass.fail*
+
+poretools fasta fail/ > pass.fail.fasta
+
+grep -i 2d_2d pass.fail.fasta | wc -l
+        4642
+
 
    
