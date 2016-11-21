@@ -84,6 +84,7 @@
       
   Also:
     
+      
       poretools fasta --min-length 1000 pass/ > pass2A.1000.fasta
       abyss-fac pass2A.1000.fasta
         n = 8799      N50 = 5861
