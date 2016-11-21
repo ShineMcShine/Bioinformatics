@@ -91,6 +91,10 @@
     poretools fasta fail/ > fail2A.fasta
     abyss-fac fail2A.fasta
       n = 68912     N50 = 3361
+    
+    poretools fasta --min-length 1000 fail/ > fail2A.1000.fasta
+    abyss-fac scp -r fail2A.1000.fasta
+      n = 32503     N50 = 3377
 
 **WD: TR9/Run2/Run2B-30h**
 
@@ -99,6 +103,10 @@
     poretools fasta pass/ > pass2B.fasta
     abyss-fac pass2B.fasta
       n = 28743     N50 = 5798
+      
+    poretools fasta --min-length 1000 pass/ > pass2B.1000.fasta
+    abyss-fac pass2B.1000.fasta
+      n = 15251     N50 = 5934
 
 *fail*
 
