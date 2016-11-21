@@ -87,3 +87,18 @@
     poretools fasta fail/ > fail2A.fasta
     abyss-fac fail2A.fasta
       n = 68912     N50 = 3361
+
+**WD: TR9/Run2/Run2B-30h**
+
+*pass*
+    
+    poretools fasta pass/ > pass2B.fasta
+    abyss-fac pass2B.fasta
+      n = 28743     N50 = 5798
+
+*fail*
+
+    poretools fasta fail/ > fail2B.fasta
+    abyss-fac fail2B.fasta
+      n = 118647      N50 = 3352
+      
