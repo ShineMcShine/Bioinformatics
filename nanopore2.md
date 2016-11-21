@@ -55,3 +55,19 @@
     N25     7681
     N50     5661
     N75     3349
+
+*fail*
+
+  poretools stats fail/ > stats.fail.txt
+  
+  less stats.fail.txt
+    
+    total reads     118647
+    total base pairs        204784651
+    mean    1726.00
+    median  858
+    min     5
+    max     103063
+    N25     4058
+    N50     3335
+    N75     2627
