@@ -20,7 +20,7 @@
     max     17457
     N25     7667
     N50     5718
-    N75     3377
+3361    N75     3377
     
 *fail*
 
@@ -74,11 +74,16 @@
 
 ##Converting files from fast5 to fasta 
 
-**WD: TR9/Run2/Run2A-8h
+**WD: TR9/Run2/Run2A-8h**
 
 *pass*
 
-1.  poretools fasta pass/ > pass2A.fasta
-2.  abyss-fac pass2A.fasta
-       n    n:500	n:N50	min	 N80 	N50	  N20	 E-size	 max	 sum	     name
-      16530	10857	2584	500	3077	5861	8242	5845	17457	40.35e6	pass2A.fasta
+    poretools fasta pass/ > pass2A.fasta
+    abyss-fac pass2A.fasta
+      n = 16530     N50 = 5861
+
+*fail*
+    
+    poretools fasta fail/ > fail2A.fasta
+    abyss-fac fail2A.fasta
+      n = 68912     N50 = 3361
