@@ -43,6 +43,41 @@ less stats.pass.fail.txt
         N50     5335
         N75     3417
         
+####*fail*
+
+**WD: /TR9/Run1/fail**
+
+*fail.pass*
+
+poretools stats pass/ > stats.fail.pass.txt
+less stats.fail.pass.txt
+
+        total reads     60
+        total base pairs        90155
+        mean    1502.58
+        median  1408
+        min     396
+        max     3576
+        N25     2489
+        N50     1807
+        N75     1312
+        
+*fail.fail*
+
+poretools stats fail/ > stats.fail.fail.txt
+less stats.fail.fail.txt
+
+        total reads     580
+        total base pairs        1651698
+        mean    2847.76
+        median  1909
+        min     127
+        max     129997
+        N25     10928
+        N50     3389
+        N75     2289
+ 
+ 
 ##Converting files from Fast5 to fasta
 
 ####*pass*
