@@ -116,7 +116,7 @@
       
 
 ##concatenating fail/pass and old nanopore data
-**WD: TR9/
+**WD: TR9/**
 
 1. cat Run2/Run2A-8h/\*fasta Run2/Run2B-30h/\*fasta > Run2.fasta
 2. cat Run1/pass/\*fasta Run1/fail/\*fasta > Run1.fasta
@@ -128,27 +128,33 @@
 ##removing small reads (\<1000bp)
 
 1. nano
-    \## removesmalls.pl
-    \#!/usr/bin/perl
-    use strict;
-    use warnings;
     
-    my $minlen = shift or die "Error: `minlen` parameter not provided\n";
-      {
-      local $/=">";
+        \## removesmalls.pl
+    
+        \#!/usr/bin/perl
+    
+        use strict;
+    
+        use warnings;
+    
+        my $minlen = shift or die "Error: `minlen` parameter not provided\n";
       
-      while(<>) {
+        {
+      
+          local $/=">";
+      
+          while(<>) {
           
-          chomp;
-          next unless /\w/;
-          s/>$//gs;
-          my @chunk = split /\n/;
-          my $header = shift @chunk;
-          my $seqlen = length join "", @chunk;
-          print ">$_" if($seqlen >= $minlen);
+            chomp;
+            next unless /\w/;
+            s/>$//gs;
+            my @chunk = split /\n/;
+            my $header = shift @chunk;
+            my $seqlen = length join "", @chunk;
+            print ">$_" if($seqlen >= $minlen);
+          }
+        local $/="\n";
         }
-      local $/="\n";
-    }
 
     save as "removesmalls.pl"
     
