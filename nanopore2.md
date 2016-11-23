@@ -130,8 +130,8 @@
 
 1. nano
     
-        \## removesmalls.pl
-        \#!/usr/bin/perl
+        ## removesmalls.pl
+        #!/usr/bin/perl
         
         use strict;
         use warnings;
