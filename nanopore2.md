@@ -123,26 +123,23 @@
 3. cat Run1.fasta Run2.fasta > TR9.nanopore.fasta
 
 4. grep \\> TR9.nanopore.fasta | wc -l
-    275136
+        
+        275136
 
 ##removing small reads (\<1000bp)
 
 1. nano
     
         \## removesmalls.pl
-    
         \#!/usr/bin/perl
-    
+        
         use strict;
-    
         use warnings;
     
         my $minlen = shift or die "Error: `minlen` parameter not provided\n";
       
         {
-      
           local $/=">";
-      
           while(<>) {
           
             chomp;
@@ -160,4 +157,5 @@
     
 2.  perl removesmalls.pl 1000 TR9.nanopore.fasta > TR9.1000.nanopore.fasta
 3.  grep \\> TR9.1000.nanopore.fasta | wc -l
-      144748
+          
+          144748
