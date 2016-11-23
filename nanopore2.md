@@ -159,3 +159,7 @@
 3.  grep \\> TR9.1000.nanopore.fasta | wc -l
           
           144748
+
+4.  abyss-fac TR9.1000.nanopore.fasta
+
+          n = 144748      N50 = 3627
