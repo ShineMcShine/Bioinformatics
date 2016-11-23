@@ -128,15 +128,17 @@
 ##removing small reads (\<1000bp)
 
 1. nano
-    ## removesmalls.pl
-    #!/usr/bin/perl
+    \## removesmalls.pl
+    \#!/usr/bin/perl
     use strict;
     use warnings;
-
+    
     my $minlen = shift or die "Error: `minlen` parameter not provided\n";
-    {
+      {
       local $/=">";
+      
       while(<>) {
+          
           chomp;
           next unless /\w/;
           s/>$//gs;
