@@ -114,3 +114,42 @@
     abyss-fac fail2B.fasta
       n = 118647      N50 = 3352
       
+
+##concatenating fail/pass and old nanopore data
+**WD: TR9/
+
+1. cat Run2/Run2A-8h/\*fasta Run2/Run2B-30h/\*fasta > Run2.fasta
+2. cat Run1/pass/\*fasta Run1/fail/\*fasta > Run1.fasta
+3. cat Run1.fasta Run2.fasta > TR9.nanopore.fasta
+
+4. grep \\> TR9.nanopore.fasta | wc -l
+    275136
+
+##removing small reads (\<1000bp)
+
+1. nano
+    ## removesmalls.pl
+    #!/usr/bin/perl
+    use strict;
+    use warnings;
+
+    my $minlen = shift or die "Error: `minlen` parameter not provided\n";
+    {
+      local $/=">";
+      while(<>) {
+          chomp;
+          next unless /\w/;
+          s/>$//gs;
+          my @chunk = split /\n/;
+          my $header = shift @chunk;
+          my $seqlen = length join "", @chunk;
+          print ">$_" if($seqlen >= $minlen);
+        }
+      local $/="\n";
+    }
+
+    save as "removesmalls.pl"
+    
+2.  perl removesmalls.pl 1000 TR9.nanopore.fasta > TR9.1000.nanopore.fasta
+3.  grep \\> TR9.1000.nanopore.fasta | wc -l
+      144748
