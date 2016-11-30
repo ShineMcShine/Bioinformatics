@@ -14,6 +14,25 @@
                 merge.sorted.bam.bai
                 pilon_out/
         
-        
-        *it's important thet the .bam file is sorted. If it's not sorted it won't work (use bamtools sort to sort it).*
-        *Also important tha the .bai file is uploaded after the .bam file.*
+        
+*It's important that the .bam file is sorted (use bamtools).*
+*Also important tha the .bai file is uploaded after the .bam file*
+
+###The Pilon script
+
+nano
+
+        #!/bin/bash
+        #$ -m ae
+        #$ -M myadress@uv.es
+        #$ -N pilon
+        #$ -pe cpus 8
+        #$ -o /pathway/TR9/draft_genome/$JOB_ID.err -j y
+
+        export PILON="java -Xmx64G -jar /util/biologia/pilon/pilon-1.20.jar"
+
+        cd /scratch/hi/hivier/TR9/draft_genome/
+
+        $PILON --genome /scratch/hi/hivier/TR9/draft_genome/contigs.fa --frags /scratch/hi/hivier/TR9/draft_genome/merge.sorted.bam --outdir /scratch/hi/hivier/TR9/draft_genome
+        /pilon_out2/ --threads 8 --K 97 --changes
+
