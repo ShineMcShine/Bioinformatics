@@ -5,7 +5,7 @@
 
 ###Improving the assembly
 
-**WD: /scratch/hi/hivier/TR9/draft_genome/**
+**WD: /TR9/draft_genome/**
         
         mkdir pilon_out
         ls
@@ -16,6 +16,7 @@
         
         
 *It's important that the .bam file is sorted (use bamtools).*
+
 *Also important tha the .bai file is uploaded after the .bam file*
 
 ###The Pilon script
@@ -37,6 +38,7 @@ nano
                --outdir /pathway/TR9/draft_genome/pilon_out/ --threads 8 --K 97 --changes
 
 save as *pilonTR9.sh*
+
 qsub pilonTR9.sh
 
 ###Output
@@ -61,5 +63,5 @@ qsub pilonTR9.sh
                 2899    1348    121     501     59234   37093   252194  195588  020218  56.84e6 pilon.fasta
 
         abyss-fac ../contigs.fa
-                n	n:500	n:N50	min	N80	N50	N20	E-size	max	sum	name
-                2899	1348	120	502	61158	142331	263564	202427	1056750	58.58e6	contigs.fa
+                n       n:500   n:N50   min     N80     N50     N20     E-size  max     sum     name
+                2899    1348    120     502     61158   142331  263564  202427  1056750 58.58e6 contigs.fa
