@@ -14,4 +14,6 @@
                 merge.sorted.bam.bai
                 pilon_out/
         
-        *it's important thet the .bam file is sorted. If it's not sorted it won't work (use bamtools sort to sort it). Also    important tha the .bai file is uploaded after the .bam file.*
+        
+        *it's important thet the .bam file is sorted. If it's not sorted it won't work (use bamtools sort to sort it).*
+        *Also important tha the .bai file is uploaded after the .bam file.*
