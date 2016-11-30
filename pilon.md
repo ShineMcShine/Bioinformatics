@@ -34,5 +34,32 @@ nano
         cd /scratch/hi/hivier/TR9/draft_genome/
 
         $PILON --genome /pathway/TR9/draft_genome/contigs.fa --frags /pathway/TR9/draft_genome/merge.sorted.bam 
-               --outdir /pathway/TR9/draft_genome/pilon_out2/ --threads 8 --K 97 --changes
+               --outdir /pathway/TR9/draft_genome/pilon_out/ --threads 8 --K 97 --changes
 
+save as *pilonTR9.sh*
+qsub pilonTR9.sh
+
+###Output
+
+1. After ~10 hours run was completed.
+
+        cd pilon_out/
+        ls
+                pilon.fasta
+                pilon.changes
+                
+        grep \> pilon.fasta -c
+                2899
+        
+        grep \> ../contigs.fa -c
+                2899
+                
+        module load abyss
+        
+        abyss-fac pilon.fasta
+                n	n:500	n:N50	min	N80	N50	N20	E-size	max	sum	name
+                2899	1348	121	501	59234	137093	252194	195588	1020218	56.84e6	pilon.fasta
+
+        abyss-fac ../contigs.fa
+                n	n:500	n:N50	min	N80	N50	N20	E-size	max	sum	name
+                2899	1348	120	502	61158	142331	263564	202427	1056750	58.58e6	contigs.fa
