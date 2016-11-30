@@ -33,7 +33,6 @@ nano
 
         cd /scratch/hi/hivier/TR9/draft_genome/
 
-        $PILON --genome /scratch/hi/hivier/TR9/draft_genome/contigs.fa 
-                --frags /scratch/hi/hivier/TR9/draft_genome/merge.sorted.bam 
-                --outdir /scratch/hi/hivier/TR9/draft_genome/pilon_out2/ --threads 8 --K 97 --changes
+        $PILON --genome /pathway/TR9/draft_genome/contigs.fa --frags /pathway/TR9/draft_genome/merge.sorted.bam 
+               --outdir /pathway/TR9/draft_genome/pilon_out2/ --threads 8 --K 97 --changes
 
