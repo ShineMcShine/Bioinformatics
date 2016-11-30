@@ -15,9 +15,7 @@
                 pilon_out/
         
         
-   *It's important that the .bam file is sorted (use bamtools).*
-
-   *Also important tha the .bai file is uploaded after the .bam file*
+   *It's important that the .bam file is sorted (use bamtools). Also important tha the .bai file is uploaded after the .bam file*
 
 ###The Pilon script
 
