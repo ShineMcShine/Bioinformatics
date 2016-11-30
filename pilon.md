@@ -57,7 +57,7 @@ qsub pilonTR9.sh
         module load abyss
         
         abyss-fac pilon.fasta
-                n	n:500	n:N50	min	N80	N50	N20	E-size	max	sum	name
+                n       n:500   n:N50   min     N80     N50     N20     E-size  max     sum     name
                 2899	1348	121	501	59234	137093	252194	195588	1020218	56.84e6	pilon.fasta
 
         abyss-fac ../contigs.fa
