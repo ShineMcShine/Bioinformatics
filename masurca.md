@@ -10,3 +10,51 @@
         1. Celera uses a specific file format called .frg because of reasons, so we'll need to convert our files.
         2. Fortunately wgs has a series of tools to do that, amongst them fastqToCA and fastaToCA.
         3. fastqToCA, however, generates an empty file so we'll use fastaToCA instead.
+
+**fastq to fasta and qual**
+
+        1. fastaToCA requires both a fasta file and a quality file.
+        2. To extract both files from a fastq file we'll use fastq_to_qual.pl perl script:
+                
+                #!/bin/perl
+
+                use strict;
+                use warnings;
+
+                my $csfastq = shift;
+                die unless defined($csfastq);
+                my $csfasta = $csfastq; $csfasta =~ s/csfastq$/csfasta/;
+                die unless !($csfastq eq $csfasta);
+                my $qual = $csfastq; $qual =~ s/.csfastq$/_QV.qual/;
+                die unless !($csfastq eq $qual);
+
+                open(FHcsfastq, "$csfastq") || die;
+                open(FHcsfasta, ">$csfasta") || die;
+                open(FHqual, ">$qual") || die;
+                my $state = 0;
+                my ($n, $r, $q) = ("", "", "");
+                while(defined(my $line = <FHcsfastq>)) {
+                    chomp($line);
+                    if(0 == $state) {
+                        &print_out(\*FHcsfasta, \*FHqual, $n, $r, $q);
+                        $n = $line;
+                        $n =~ s/^\@/>/;
+                    }
+                    elsif(1 == $state) {
+                        $r = $line;
+                    }
+                    elsif(3 == $state) {
+                        $q = $line;
+                        # convert back from SANGER phred
+                        my $tmp_q = "";
+                        for(my $i=0;$i<length($q);$i++) {
+                            my $Q = ord(substr($q, $i, 1)) - 33;
+                            die unless (0 < $Q);
+                            if(0 < $i) {
+                                $tmp_q .= " ";
+                            }
+                            $tmp_q .= "$Q";
+                        }
+                        $q = $tmp_q;
+                    }
+      
