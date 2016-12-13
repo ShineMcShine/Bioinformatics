@@ -5,7 +5,7 @@
            Go to src/AS_global.H and set variable AS_READ_MAX_NORMAL_LEN_BITS to 20. 21 won't work.
            
 
-###Preparing the reads
+###Preparing nanopore reads
 
         1. Celera uses a specific file format called .frg because of reasons, so we'll need to convert our files.
         2. Fortunately wgs has a series of tools to do that, amongst them fastqToCA and fastaToCA.
