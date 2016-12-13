@@ -58,3 +58,14 @@
                         $q = $tmp_q;
                     }
       
+
+mv TR9.nanopore.fastq TR9.nanopore.csfastq
+perl fastq_to_qual.pl TR9.nanopore.csfastq
+ls
+        TR9.nanopore.csfastq
+        TR9.nanopore.csfasta
+        TR9.nanopore.qual
+        
+**fasta and qual to frg**
+
+./fastaToCA -l TR9nanopore -s /PATH/TR9.nanopore.csfasta -q /PATH/TR9.nanopore.qual > TR9.nanopore.frg
