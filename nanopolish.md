@@ -34,4 +34,4 @@ WD: /home/parmelia/Nanopolish/
       
 ##Compute the consensus sequence
 
-      python nanopolish_makerange.py draft.fa | parallel --results nanopolish.results -P 8 nanopolish variants --consensus polished.{1}.fa -w {1} -r reads.fa -b reads.sorted.bam -g draft.fa -e reads.eventalign.sorted.bam -t 4 --min-candidate-frequency 0.1 --models nanopolish_models.fofn
+      python nanopolish_makerange.py draft.fa | parallel --results nanopolish.results -P 16 nanopolish variants --consensus polished.{1}.fa -w {1} -r reads.fa -b reads.sorted.bam -g draft.fa -e reads.eventalign.sorted.bam -t 4 --min-candidate-frequency 0.1 --models nanopolish_models.fofn
