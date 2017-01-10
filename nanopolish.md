@@ -9,14 +9,18 @@
       
 **WD: /home/parmelia/Nanopolish/**
   
-  nanopolish extract --type 2D /pass/ > reads.fa
+      nanopolish extract --type 2D /pass/ > reads.fa
   
 ###Index the draft genome
   
-  mv contigs.fa draft.fa
-  bwa index draft.fa
+      mv contigs.fa draft.fa
+      bwa index draft.fa
   
 ###Align the reads in base space
   
-  bwa mem -x ont2d -t 8 draft.fa reads.fa | samtools view -Sb - | samtools sort -o - reads.sorted.bam
-  samtools index reads.sorted.bam
+      bwa mem -x ont2d -t 8 draft.fa reads.fa | samtools view -Sb - | samtools sort -o - reads.sorted.bam
+      samtools index reads.sorted.bam
+      
+###Copy the nanopolish model files into the working directory
+
+      cp /Programas/nanopolish/etc/r9-models/* .
