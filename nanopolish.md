@@ -5,9 +5,10 @@
       
 ###Convert fast5 to fasta
 
-      1. For this run we'll only use 2D readings from the pass folder of the 2nd nanopore run (30 hours), due to memory restrains.
+      1. For this run we'll only use 2D reads from the pass folder of the 2nd nanopore run (30 hours) due to memory restrains
       
 **WD: /home/parmelia/Nanopolish/**
+  
   nanopolish extract --type 2D /pass/ > reads.fa
   
 ###Index the draft genome
