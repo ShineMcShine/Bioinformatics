@@ -3,6 +3,8 @@
       1. Do not use poretools, Fast5 files must be converted to fasta with nanopolish extract.
       2. The folder with the fast5 files must be in the working directory.
       
+##Prepare the reads
+
 **Convert fast5 to fasta**
 
       1. For this run we'll only use 2D reads from the pass folder of the 2nd nanopore run (30 hours) due to memory restrains
