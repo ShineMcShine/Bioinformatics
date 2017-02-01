@@ -38,3 +38,21 @@ WD: /home/parmelia/Nanopolish/
       python nanopolish_makerange.py draft.fa | parallel --results nanopolish.results -P 16 /
       nanopolish variants --consensus polished.{1}.fa -w {1} -r reads.fa -b reads.sorted.bam -g draft.fa /
       -e reads.eventalign.sorted.bam -t 4 --min-candidate-frequency 0.1 --models nanopolish_models.fofn
+      
+**Combine all reads**
+
+      python nanopolish_merge.py polished.*.fa > polished_genome.fa
+      
+Now we check the output
+
+      grep \> polished_genome.fa -c
+            2897
+            
+*Seems like only closed TWO scaffolds. Let's check the size.*
+
+      mkdir genome/
+      mv polished_genome.fa genome/
+      ll genome/
+            59699533    polished_genome.fa
+            
+*Seems it's slightly smaller than* draft.fa *suggesting either there's less Ns per kb or less repetitions. We'll use QUAST.* 
