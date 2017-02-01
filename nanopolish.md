@@ -29,9 +29,12 @@ WD: /home/parmelia/Nanopolish/
 
 **Align the reads in event space**
 
-      nanopolish eventalign -t 8 --sam -r reads.fa -b reads.sorted.bam -g draft.fa --models nanopolish_models.fofn | samtools view -Sb - | samtools sort -f - reads.eventalign.sorted.bam
+      nanopolish eventalign -t 8 --sam -r reads.fa -b reads.sorted.bam -g draft.fa /
+      --models nanopolish_models.fofn | samtools view -Sb - | samtools sort -f - reads.eventalign.sorted.bam
       samtools index reads.eventalign.sorted.bam
       
 ##Compute the consensus sequence
 
-      python nanopolish_makerange.py draft.fa | parallel --results nanopolish.results -P 16 nanopolish variants --consensus polished.{1}.fa -w {1} -r reads.fa -b reads.sorted.bam -g draft.fa -e reads.eventalign.sorted.bam -t 4 --min-candidate-frequency 0.1 --models nanopolish_models.fofn
+      python nanopolish_makerange.py draft.fa | parallel --results nanopolish.results -P 16 /
+      nanopolish variants --consensus polished.{1}.fa -w {1} -r reads.fa -b reads.sorted.bam -g draft.fa /
+      -e reads.eventalign.sorted.bam -t 4 --min-candidate-frequency 0.1 --models nanopolish_models.fofn
