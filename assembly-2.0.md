@@ -6,7 +6,7 @@
 ## Approaches
     Since we have different approaches I'll make a list of what I intend to do:
     
-        1) Use Masurca-superreads with my illumina data to generate superreads, then combine them with nanopore data and try canu.
+        1) Use Masurca-superreads with my illumina data to generate superreads, combine them with nanopore data and try canu.
         Then polish the result with nanopolish and improve the quality with Pilon.
         
         2) Use only nanopore reads to generate an assembly with canu. Polish with nanopolish. Then improve using Pilon.
