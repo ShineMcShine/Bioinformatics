@@ -14,3 +14,6 @@
         3) Assembly nanopore, then polish using racon. Improve with Pilon.
         
      Then we'll use SSPACE-standar for re-scaffolding. Or whatever.
+     
+     
+### 1) Masurca + Canu
